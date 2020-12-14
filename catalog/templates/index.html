@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Жалкое Подобие сайта Домашней Библиотеки</h1>
+
+  <p>Добро пожаловать на примитивный веб-сайт написанный на веб-фреймворке DJANGO.</p>
+
+<h2>Динамическое наполнение</h2>
+
+  <p>В библиотке имеются записи следующего рода:</p>
+  <ul>
+    <li><strong>Books:</strong> {{ num_books }}</li>
+    <li><strong>Copies:</strong> {{ num_instances }}</li>
+    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <li><strong>Ganre:</strong> {{num_ganre}}</li>
+    <li><strong>BookTitle:</strong> {{num_booktitle}}</li>
+  </ul>
+
+  <p>Вы посещали этот сайт следующее количество раз: {{ num_visits }}{% if num_visits == 1%} time{% else %} {% endif %}.</p>
+
+{% endblock %}

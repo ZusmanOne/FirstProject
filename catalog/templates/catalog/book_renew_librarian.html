@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+{% block content %}
+
+    <h1>Название: {{bookinst.book.title}}</h1>
+    <p>Заемщик: {{bookinst.borrower}}</p>
+    <p>{% if bookinst.is_overdue %} class="Срок сдачи книги ЗАКОНЧЕН"{% endif %} Дата Возврата: {{bookinst.due_back}}</p>
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+           {{form.as_table}}
+        </table>
+        <input type="submit" value="Обновить" />
+    </form>
+
+{% endblock %}
